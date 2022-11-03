@@ -1,0 +1,882 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Luckiest+Guy&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; }
+
+a {
+    text-decoration: none;
+    color: #d6d6d6; }
+
+html {
+    position: relative;
+    min-height: 100%;
+    }
+
+/* INDEX */
+body {
+    background-color: black;
+}
+
+.landing-page {
+    background-image: url(https://wallpapercave.com/dwp1x/wp2036912.png);
+    background-repeat: repeat-x;
+    background-size: cover;}
+header {
+    background-color: #183951;
+    text-align: center;
+    display: flex; }
+
+#header-img {
+    width: 7.5em;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 60%;
+    cursor: pointer;
+    margin-left: 3em;
+    z-index: 1; }
+
+#nav-bar {
+    margin-left: 40%;
+    margin-top: 25px; }
+
+header ul li a{
+    color: aliceblue;
+    font-size: 18px;
+    font-family:'Architects Daughter', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    display: block;
+    cursor: url('../IMGS/SVGs/cursorBlue.svg'), auto; }
+
+header ul li{
+    display: inline-block;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    font-size: 24px; }
+
+.headin:hover {
+    transition: 0.3s ease;
+    color: #f9d725 ; }
+
+.toggle-burger {
+    position: absolute;
+    display: none;
+    top: 2.75rem;
+    right: 3rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px;
+    height: 41px;
+}
+
+.toggle-burger .bar {
+    height: 6px;
+    width: 100%;
+    background-color: antiquewhite;
+    border-radius: 10px ;
+}
+
+
+.searchwrapper-container {
+    position: absolute;
+    top: 1.5%;
+    left: 15%;
+}
+
+.searchwrapper {
+    position: absolute;
+    padding: 10px 10px;
+}
+
+.searchbox {
+    position: absolute;
+    border-radius: 40px;
+    background-color: #242526;
+    padding: 10px 10px;
+    width: 500px;
+    margin-left: 10px;
+}
+
+.input{
+    width: 400px;
+    border: 3px solid #fff;
+    background: transparent;
+    padding: 10px 10px;
+    border-radius: 50px;
+    outline: none;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .input::-webkit-input-placeholder {
+    color: #fff;
+    opacity: 0.5;
+    font-family: 'Architects Daughter', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+  }
+
+.close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color:#b31630;
+    background: #fff;
+    border: 0px;
+    width: 120px;
+    height: 47px;
+    border-radius: 50px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: bold;
+   
+  }
+
+.side-wrapper .sidebar {
+    position: relative;
+    width: 200px;
+    height: 100%;
+    background-color: goldenrod;
+    padding: 30px 0px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.side-wrapper .sidebar h2 {
+    color: #1e1714;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: gainsboro;
+}
+
+.side-wrapper .sidebar ul li {
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(225, 225, 225, 0.05);
+}
+
+.side-wrapper .sidebar ul li a{
+    color: rgb(26, 24, 21);
+}
+
+#more-genre {
+    color: #1e1714;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: gainsboro;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.right-wrapper .rightbar {
+    position: relative;
+    height: 100%;
+    background-color: goldenrod;
+    padding: 30px 10px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    text-align: center;
+}
+
+.right-wrapper .rightbar h2 {
+    color: #1e1714;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: gainsboro;
+}
+
+.right-wrapper .rightbar ul li {
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(225, 225, 225, 0.05);
+    list-style: none;
+}
+
+.right-wrapper .rightbar ul li a{
+    color: rgb(26, 24, 21);
+}
+
+#viewedbook {
+    width: 150px;
+    height: auto;
+    border: 5px solid #b31630;
+    text-align: center;
+    background-color: wheat;
+}
+
+#bookMvp {
+    font-family: 'Architects Daughter','Courier New', Courier, monospace;
+    font-size: 24px;
+}
+
+.btnUp {
+    background-color: #b31630;
+    color: blanchedalmond;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.mvpStory {
+    font-family: 'Architects Daughter','Courier New', Courier, monospace;
+    color: rgb(26, 24, 21);
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.alert {
+    text-align: center;
+}
+
+.hot {
+    color: goldenrod;
+    font-family: 'Architects Daughter', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+}
+
+#price {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    text-align: center;
+    color: goldenrod;
+    font-family: 'Architects Daughter', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.pricing {
+    display: flex;
+    margin: auto;
+    width: max-content;
+}
+
+.boxprice {
+    background-color: rgb(18, 19, 17);
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 18px;
+    color: rgb(238, 231, 231);
+    border-radius: 20px;
+    padding: 40px;
+    border: 3px solid #ffffff;
+    width: 30%;
+}
+
+footer {
+    background-color: #b31630;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    height: auto;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.footer-class {
+    color: blanchedalmond;
+    text-align: center;
+    padding-top: 15px;
+}
+/* Browse */
+/*TODO: In Progess!!!*/
+
+.body-block {
+    margin: auto;
+    background-color: #425960;
+    height: auto;
+    width: 98vw;
+    margin-top: 10px;
+    margin-bottom: 4%;
+    border-radius: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+div.imagebox {
+    position: relative;
+    width: 25%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.enclosure {
+    padding:5px 5px 30px 5px;
+    margin: 20px;
+    background-color: #183951;
+}
+
+.origapic {
+    width: 100%;
+    height: auto;
+}
+
+.name-game {
+    color: #d6d6d6;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+div.body-block .imagebox .enclosure:hover {
+    background-color: #1e1714;
+    border-radius: 40px;
+    transition: 0.5s ease;
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+div.body-block .imagebox .enclosure:hover img {
+    border-radius: 50px;
+    transition: 0.5s ease;
+}
+
+div.body-block .imagebox .enclosure:hover img.origapic {
+    transition: 0s ;
+    visibility: hidden;
+}
+
+div.body-block .imagebox .enclosure:hover .name-game {
+    color: #f9d725;
+    transition: 0.5s;
+}
+
+.hidden-agenda {
+    visibility: hidden;
+    overflow: hidden;
+    position: absolute;
+    transition: 0.5s ease;
+    bottom: 5%;
+    left: 7.5%;
+    right: 0;
+    width: 85%;
+    height: 0;
+    background-color: #b31630;
+    color: blanchedalmond;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding-top: 25px;
+    border-radius: 30px;
+}
+
+div.body-block .imagebox .enclosure:hover .hidden-agenda {
+    height: 92%;
+    visibility: visible;
+}
+
+.sneaky-pic {
+    margin: 0 auto;
+    height: 369px;
+    width: 248px;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.numero {
+    margin: 10px 20px 60px 20px;
+    padding: 20px;
+    background-color:#183951;
+    border-radius: 40px;
+    text-align: center;
+}
+
+.num a {
+    color: #d6d6d6;
+    font-size: 24px;
+    padding: 10px 25px 10px 25px;
+    background-color:#1e1714;
+    border-radius: 20%;
+}
+
+#local {
+    background-color: #b31630;
+    border-radius: 20%;
+}
+
+.num a:hover{
+    background-color:#cd5e70;
+}
+
+.btnHidden {
+    background-color: #b31630;
+    color: blanchedalmond;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.goldybtn {
+    padding: 12px;
+    background-color: goldenrod;
+}
+
+.greenbtn {
+    background-color: #03c04a;
+    padding: 12px;
+}
+
+.hiddenDesc {
+    margin-top: 8px;
+    font-family: 'Architects Daughter' , 'Courier New', Courier, monospace;
+}
+/*Plans*/
+
+.the-plan {
+    position: relative;
+    background-color: rgba(4, 15, 33, 0.895);
+    width: 95%;
+    height: 75vh;
+    margin: auto;
+    border-radius: 20px;
+}
+
+#pick-a {
+    text-align: center;
+    color: goldenrod;
+    font-family: 'Architects Daughter', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-top: 15px;
+}
+
+.benefits-par {
+    width: 20vw;
+    height: auto;
+}
+
+.planPrice {
+    background-color: rgb(18, 19, 17);
+    text-align: center;
+    font-size: 18px;
+    color: rgb(238, 231, 231);
+    border-radius: 20px;
+    padding: 40px;
+    border: 3px solid #ffffff;
+    width: 40%;
+    margin: 5px 15px;
+}
+
+.btnPlans {
+    background-color: #b31630;
+    color: blanchedalmond;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.pricingPlans {
+    display: flex;
+    margin: auto;
+    width: max-content;
+}
+
+.loginboy2 {
+    background-image: url(https://wallpapercave.com/dwp1x/wp2036912.png);
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+/*Login*/
+
+.loginboy {
+    background-image: url(https://i.pinimg.com/564x/27/37/90/273790559ee0b521708e18269086ba48.jpg);
+    background-repeat:repeat-x repeat-y;
+    background-size: auto auto;
+    background-position: center;
+}
+
+.login-form {
+    background: #fff;
+    width: 30vw;
+    height: auto;
+    margin: 25px;
+    border-radius: 4px;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+  }
+
+.firstLog {
+    margin-left: 250px;
+}
+
+  .login-form h1 {
+    padding: 35px 35px 0 35px;
+    font-weight: 300;
+    text-align: center;
+  }
+  .login-form .content {
+    padding: 35px;
+    text-align: center;
+  }
+  .login-form .input-field {
+    padding: 12px 5px;
+  }
+  .login-form .input-field input {
+    font-size: 16px;
+    display: block;
+    font-family: 'Rubik', sans-serif;
+    width: 100%;
+    padding: 10px 1px;
+    border: 0;
+    border-bottom: 1px solid #747474;
+    outline: none;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+  }
+  .login-form .input-field input::-webkit-input-placeholder {
+    text-transform: uppercase;
+  }
+  .login-form .input-field input::-moz-placeholder {
+    text-transform: uppercase;
+  }
+  .login-form .input-field input:-ms-input-placeholder {
+    text-transform: uppercase;
+  }
+  .login-form .input-field input::-ms-input-placeholder {
+    text-transform: uppercase;
+  }
+  .login-form .input-field input::placeholder {
+    text-transform: uppercase;
+  }
+  .login-form .input-field input:focus {
+    border-color: #222;
+  }
+  .login-form a.link {
+    text-decoration: none;
+    color: #747474;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 20px;
+  }
+  .login-form .action {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+  }
+  .login-form .action .btnRec {
+    width: 100%;
+    border: none;
+    padding: 18px;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #e8e9ec;
+    color: #777;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 0;
+    letter-spacing: 0.2px;
+    outline: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+  .login-form .action .btnRec:hover {
+    background: #d8d8d8;
+  }
+  .login-form .action .btnRec:nth-child(1) {
+    background: #2d3b55;
+    color: #fff;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 4px;
+  }
+  .login-form .action .btnRec:nth-child(1):hover {
+    background: #3c4d6d;
+  }
+
+  .btnRec {
+    text-align: center;
+  }
+  /*Address*/
+  #login-formID {
+    width: 60vw;
+    height: auto;
+    margin: 20px auto;
+    display:block;
+  }
+
+/*Book List*/
+
+#booklist-body {
+    background-color:#425960;
+    background-image: url(https://i.pinimg.com/originals/04/e8/5b/04e85bc2eb1d8b72dc1acc612bb9a87d.jpg);
+    background-size: contain;
+    background-repeat: repeat-x repeat-y;
+}
+
+.contain-thecontainedProf {
+    display: flex;
+}
+
+.contain-profile {
+    display: flex;
+    background-color:#425960;
+    background-image: url(https://wallpapercave.com/dwp1x/wp2706119.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border:5px solid #b31630;
+    margin: 25px 25px;
+    width: 30%;
+    height: auto;
+    padding: 10px 5px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#pic-obunga {
+    width: 250px;
+    height: auto;
+    border:5px solid blanchedalmond;
+    padding: 0%;
+    margin-left: 10px;
+    border-radius: 20px;
+}
+
+#prof-btn {
+    width: 120px;
+    height: min-content;
+    padding: 15px;
+    font-size: 20px;
+    font-family: 'Architects Daughter','Courier New', Courier, monospace;
+}
+
+.ubos-nako-ng-name {
+    margin-right: 20px;
+}
+
+#user-name {
+    background-color: #b31630;
+    color: blanchedalmond;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px 5px 0 5px;
+    font-family: 'Architects Daughter','Courier New', Courier, monospace;
+}
+
+.recommended {
+    display: flex;
+    background-color:#425960;
+    background-image: url(https://wallpapercave.com/dwp1x/wp2706119.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border:5px solid #b31630;
+    margin: 25px 25px;
+    width: 65vw;
+    padding: 10px 5px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#recent-bought {
+    width: 10rem;
+    height: auto;
+    border:5px solid #1e1714;
+    padding: 0%;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.double-treble {
+    margin: 0px 30px ;
+}
+/*Contact*/
+
+.contact-whole {
+    background-color: blanchedalmond;
+    margin: 12px auto;
+    width: 80vw;
+    text-align: center;
+    border-radius: 50px;
+}
+
+#contact-h2 {
+    color: #242526;
+    text-align: center;
+    padding: 20px;
+    font-size: 2em;
+}
+
+#contact-h3 {
+    color: #242526;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+#contact-form {
+    width: 70vw;
+    height: 45vh;
+}
+
+/*Payment*/
+
+.payment-container {
+    background-color: blanchedalmond;
+    margin: 20px 40px;
+    border-radius: 15px;
+    border:5px solid #b31630;
+    width: 750px;
+    height: 450px;    
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    justify-content: center;
+}
+
+.payment-container h1 {
+    text-align: center;
+}
+
+
+.payme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cards img{
+    width: 120px;
+    height: auto;
+}
+
+.confirm-payment a {
+    color: blanchedalmond;
+    background-color: #b31630;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.confirm-payment {
+    margin-top: 20px;
+}
+
+.first-batch {
+    display: flex;
+}
+
+.owner {
+    width: 100%;
+    margin-right: 40px;
+}
+
+.payment-input {
+    border:4px solid  #b31630;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.payment-input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+#paycon {
+    margin-left: 2%;
+}
+
+
+
+/*Index Slider*/
+
+img {
+    padding: 10px;
+    height: 407px;
+}
+
+#slider {
+    overflow: hidden;
+    max-height: 230px;
+    max-width: 800px;
+    height: 230px;
+    width: 800px;
+    background-color: #b31630;
+    border-radius: 50px 50px 50px 50px;
+    align-self: center;
+    border: 5px solid goldenrod;
+    margin-left: 10px;
+}
+
+#slider figure {
+    position: relative;
+    width: 500%;
+    left: 0;
+    animation: 16s slider infinite ;
+}
+
+#slider figure div {
+    width: 5%;
+    float: left;
+}
+
+#slider figure img {
+    width: 100%;
+    float: left;
+}
+
+.hot-selling-books {
+    width: 188px;
+    height: 230px;
+    border-radius: 20px;
+}
+
+@keyframes slider{
+    0% {
+        left: 0;
+    }
+    20%{
+        left: 0;
+    }
+    25% {
+        left: -100%
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+}
+
+/*TODO: SAVED*/
+/*----------WEBKIT!!!!-----------*/
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    box-shadow:inset 0 0 10px #242526;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #b4b5b4;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 5px;
+    background-color: #939393;
+}
+
+

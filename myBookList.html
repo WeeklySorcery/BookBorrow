@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="IMGS/SVGs/book-icon.svg" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lend-A-Book</title>
+    <link rel="stylesheet" href="CSS/style2.css">
+    <link rel="stylesheet" href="CSS/mediaQuery.css">
+    <script src="JS/js.js" defer></script>
+</head>
+
+<body id="booklist-body">
+    <div class="container">
+        <header id="header">
+            <img src="IMGS/Lend-A-Book-logos_black.png" alt="Header" id="header-img" >
+
+            <a href="#" class="toggle-burger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+
+            <nav id="nav-bar" class="nav-bar">
+                <ul>
+                    <li><a href="index.html" class="headin">Home</a></li>
+                    <li><a href="browse.html" class="headin">Browse</a></li>
+                    <li><a href="plans.html" class="headin">Our Plans</a></li>
+                    <li><a href="contact.html" class="headin">Contact</a></li>
+                    <li><a href="login.html" class="headin">Login</a></li>
+                    <li><a href="myBookList.html" class="headin">Your Library</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="extra-nav">
+            <div class="searchwrapper-container">
+                <div class="searchwrapper">
+                    <div class="searchbox">
+                        <input type="text" class="search-txt input" name="" placeholder="Looking for Something?">
+                        <input type="button" class="close-btn" name="" value="Search">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contain-thecontainedProf">
+            <div class="contain-profile">
+                <div class="your-profile-pic">
+                    <img src="IMGS/prof.jpg" alt="" id="pic-obunga">
+                    <h3 id="user-name">Your Name</h3>
+                </div>
+                <div class="ubos-nako-ng-name">
+                    <button class="btnUp" id="prof-btn">Favorites</button>
+                    <button class="btnUp" id="prof-btn">Wish List</button>
+                    <button class="btnUp" id="prof-btn">Request</button>
+                    <button class="btnUp" id="prof-btn">Settings</button>
+                    <button class="btnUp" id="prof-btn">Log Out</button>
+                </div>
+            </div>
+
+            <div class="recommended">
+                <div class="your-profile-pic double-treble">
+                    <img src="IMGS/BookCover/howlMovingCastle.jpg" alt="" id="recent-bought">
+                    <h3 id="user-name">Recently Bought</h3>
+                </div>
+                <div class="your-profile-pic double-treble">
+                    <img src="IMGS/BookCover/starsight.jpg" alt="" id="recent-bought">
+                    <h3 id="user-name">Recently Viewed</h3>
+                </div>
+                <div class="your-profile-pic double-treble">
+                    <img src="IMGS/BookCover/harry potter.jpg" alt="" id="recent-bought">
+                    <h3 id="user-name">Recently Requested</h3>
+                </div>
+                <div class="your-profile-pic double-treble">
+                    <img src="IMGS/BookCover/grace of kings.jpg" alt="" id="recent-bought">
+                    <h3 id="user-name">Highly Recommended</h3>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+ 
+    <footer>
+        <p class="footer-class">ABOUT | BLOG | BROWSE BOOKS | SUBSCRIPTION PLANS | CONTACT LIBRARY | LINKS | PRIVACY POLICY | TERMS AND CONDITION </p>
+    </footer>
+</body>
+</html>
