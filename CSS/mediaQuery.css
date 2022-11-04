@@ -253,7 +253,7 @@ footer {
     .index-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr auto auto auto;
+        grid-template-rows: 1fr auto auto auto auto;
         grid-template-areas: 
         "header header header"
         "extra extra extra"
@@ -418,8 +418,6 @@ footer {
     }
 
 
-
-
 }
 
 @media all and (max-width: 962px){
@@ -541,7 +539,7 @@ footer {
     .index-container {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr auto  auto auto;
+        grid-template-rows: 1fr auto auto  auto auto;
         grid-template-areas: 
         "header"
         "extra"
@@ -600,4 +598,119 @@ footer {
     div.imagebox {
         width: 70%;
     }    
+
+    .planPrice {
+        width: 80vw;
+    }
+
+    .booklist-footer {
+        position: static;
+    }
 }
+
+
+@media all and (max-width: 500px) {
+    /*Booklist*/
+    .contain-profile {
+        width: 90%;
+    }
+
+    .recommended {
+        width: 90vw;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .payment-container {
+        margin: 10px 20px;
+        border-radius: 15px;
+        width: 90vw;
+        height: 100%;
+    }
+
+    footer {
+        position:static;
+    }
+}
+
+@media all and (max-width:430px){
+    .cards img {
+        width: 100px;
+    }
+
+    .first-batch {
+        display: none;
+    }
+    
+    .first-batch-hidden {
+        display: flex;
+    }
+}
+
+
+@media all and (max-width: 390px) {
+    /*Index*/
+    footer {
+        position:static;
+    }
+
+    .footer {
+        background-color: #b31630;
+    }
+
+    input.big {
+        display: none;
+    }
+
+    input.small {
+        display: unset;
+    }
+
+    .input {
+        width: 80vw;
+    }
+
+    /*Plans*/
+    .planPrice {
+        width: 80vw;
+    }
+
+    /*login*/
+    .login-form {
+        position: relative;
+        width: 90vw;
+        left: 5%;
+        display: inline-block;
+    }
+
+}
+
+@media all and (max-width: 368px){
+    .confirm-payment {
+        display: none;
+    }
+    
+    .hide-pay {
+        margin-top: 20px;
+        display: unset;
+    }
+}
+
+@media all and (max-width: 324px) {
+    #prof-btn {
+        width: 200px;
+    }
+
+    #pic-obunga {
+        width: 200px;
+    }
+
+    .ubos-nako-ng-name {
+        margin: auto;
+    }
+
+    #recent-bought {
+        width: 10rem;
+    }
+}
+

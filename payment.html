@@ -38,7 +38,8 @@
             <div class="searchwrapper-container">
                 <div class="searchwrapper">
                     <div class="searchbox">
-                        <input type="text" class="search-txt input" name="" placeholder="Looking for Something?">
+                        <input type="text" class="search-txt input big" name="" placeholder="Looking for Something?">
+                        <input type="text" class="search-txt input small" name="" placeholder="search . . .">
                         <input type="button" class="close-btn" name="" value="Search">
                     </div>
                 </div>
@@ -56,6 +57,22 @@
                         </div>
                     </div>
                     <div class="cvv">
+                        <h3>CVV</h3>
+                        <div class="payment-input">
+                            <input type="password">
+                        </div>
+                    </div>
+                </div>
+                <div class="first-batch-hidden">
+                    <div class="card-num">
+                        <h3>Owner</h3>
+                        <div class="payment-input">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="first-batch-hidden">
+                    <div class="card-num">
                         <h3>CVV</h3>
                         <div class="payment-input">
                             <input type="password">
@@ -82,12 +99,18 @@
                         <a href="index.html"> Confirm Payment</a>
                         <a href="index.html" id="paycon"> Cancel</a>
                     </div>
+                    <div class="confirm-payment hide-pay">
+                        <a href="index.html"> Confirm Payment</a>
+                    </div>
+                    <div class="confirm-payment hide-pay">
+                        <a href="index.html" id="paycon"> Cancel</a>
+                    </div>
             </div>
         </div>
 
     
     </div>
-    <footer>
+    <footer class="payment-footer">
        <p class="footer-class">ABOUT | BLOG | BROWSE BOOKS | SUBSCRIPTION PLANS | CONTACT LIBRARY | LINKS | PRIVACY POLICY | TERMS AND CONDITION </p>
     </footer>
 </body>
