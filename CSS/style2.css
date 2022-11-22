@@ -139,6 +139,7 @@ input.small {
    
   }
 
+
 .side-wrapper .sidebar {
     position: relative;
     width: 200px;
@@ -436,10 +437,10 @@ div.body-block .imagebox .enclosure:hover .hidden-agenda {
 /*Plans*/
 
 .the-plan {
-    position: relative;
+    position: static;
     background-color: rgba(4, 15, 33, 0.895);
     width: 95%;
-    height: 75vh;
+    height: auto;
     margin: auto;
     border-radius: 20px;
 }
@@ -772,6 +773,10 @@ div.body-block .imagebox .enclosure:hover .hidden-agenda {
 
 .hide-pay {
     display: none;
+}
+
+.cancel-pay {
+    margin-top: 10px;
 }
 
 .first-batch {

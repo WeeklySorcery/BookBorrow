@@ -440,6 +440,10 @@ footer {
         left : 8%;
     }
 
+    .side-wrapper {
+        height: 75vh;
+    }
+
     #slider figure img {
         height: auto;
     }
@@ -462,16 +466,15 @@ footer {
         border-radius: 10px;
     }
 
-    .side-wrapper {
-        height: 80vh;
-    }
-
     /*Browse*/
     div.imagebox {
         width: 40%;
     }    
 
     /*Plans*/
+    .footer-class {
+        display: none;
+    }
 
     .pricingPlans {
         display: block;
@@ -529,6 +532,23 @@ footer {
         left: 0%;
       }
 
+}
+
+
+/*The way to specific one*/
+
+@media all and (max-width: 962px) and (max-height: 700px){
+
+    .side-wrapper {
+        height: 91vh;
+    }
+}
+
+@media all and (max-width: 962px) and (max-height: 599px){
+
+    .side-wrapper {
+        height: 99vh;
+    }
 }
 
 
