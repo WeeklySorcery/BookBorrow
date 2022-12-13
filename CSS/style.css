@@ -1,0 +1,105 @@
+
+/*INDEX*/
+body::-webkit-scrollbar{
+    display: none;
+}
+
+:root {
+    --slider-padding: 5rem;
+}
+
+a {
+    flex: 0 0 20%;
+
+}
+
+
+h1 {background-color: #b31630;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+h1.topsi {
+    background-color: rgba(218, 165, 32, 0.732);
+    padding: 1rem;
+
+}
+
+.row-book{
+    width: 100%;
+    object-fit: contain;
+    max-height: 20rem;
+    max-width: 100%;
+    transition: transform 450ms;
+    border-radius: 1rem;
+    background: unset;
+}
+
+.list-a-book {
+    --slider-index: 0;
+    flex-grow: 0;
+    display: flex;
+    padding: 10px 0;
+    transform: translateX(calc(var(--slider-index) * -100%));
+    transition: transform 250ms ease-in-out;
+}
+
+
+.row-book:hover {
+    transform: scale(1.05);
+    z-index: 100;
+    background: url(../RESOURCES/BG/books.png);
+}
+
+.row-large {
+    max-height: 22rem;
+}
+    
+.row-large:hover {
+    transform: scale(1.);
+    transform: translateY(10px,0px,20px);   
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.package {
+    margin-top: 10px;
+    color: aliceblue;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family:'Architects Daughter', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.list-a-book::-webkit-scrollbar{
+    display: none;
+}
+
+.handle {
+    border: none;
+    border-radius: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 10;
+    margin: 0.25rem 0;
+    padding: 0.5rem;
+    font-size: 5rem;
+    flex-grow: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 0;
+    transition: background-color 150ms ease-in-out;
+
+}
+
+.handle:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: aliceblue;
+
+}
