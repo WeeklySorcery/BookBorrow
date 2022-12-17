@@ -1,5 +1,8 @@
-<?php  require 'config.php'; ?>
+<?php  require 'config.php'; 
+$link = $_SERVER["REQUEST_URI"];
+$genre_num = substr($link, -1);
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,28 +23,24 @@
 
     <div class="search-container">
         <?PHP 
-            if (isset($_POST['submit-search'])){
-                $search = mysqli_real_escape_string($conn, $_POST['search']);
-                $sql = "SELECT * FROM products WHERE product_name LIKE '%$search%'";
-                $result = mysqli_query($conn, $sql);
-                $queryResult = mysqli_num_rows($result);
+            $sql = "SELECT * FROM products WHERE category_id =  '$genre_num'";
+            $result = mysqli_query($conn, $sql);
+            $queryResult = mysqli_num_rows($result);
 
-                if($queryResult > 0){
-                    while($row = mysqli_fetch_assoc($result)) {
-                        echo "<div class='book-search-info'>
-                                <h3 class='searchbook-title'><a href='details.php?id={$row['product_id']}' class='searchLink'>" .$row['product_name']. "</a></h3>
-                                <a href='details.php?id={$row['product_id']}'><img class='search-image-size' src='".$row['image_source']."'></a>
-                            </div>";
+            if($queryResult > 0){
+                while($row = mysqli_fetch_assoc($result)) {
+                    echo "<div class='book-search-info'>
+                            <h3 class='searchbook-title'><a href='details.php?id={$row['product_id']}' class='searchLink'>" .$row['product_name']. "</a></h3>
+                            <img class='search-image-size' src='".$row['image_source']."'>
+                        </div>";
                     }
-
                 } else {echo "There are no results matching your search";}
-            }
         ?>
     </div>
 
     <footer>
         <p class="footer-class">ABOUT | BLOG | BROWSE BOOKS | SUBSCRIPTION PLANS | CONTACT LIBRARY | LINKS | PRIVACY POLICY | TERMS AND CONDITION </p>
     </footer>
+
 </div>
 </body>
-</html>

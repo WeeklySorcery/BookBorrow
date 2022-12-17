@@ -1,13 +1,5 @@
 <?php 
-session_start();
-
-    //ID of User
-    if(!empty($_SESSION["id"])){
-    $id = $_SESSION["id"];
-    $conn = mysqli_connect("localhost", "root", "", "reglog");
-    $resultID = mysqli_query($conn, "SELECT * FROM tb_user WHERE id = $id");
-    $rowID = mysqli_fetch_assoc($resultID);
-    }
+require 'config.php';
 ?>
 
 <!DOCTYPE html>
@@ -20,44 +12,12 @@ session_start();
     <title>Lend-A-Book</title>
     <link rel="stylesheet" href="CSS/global.css">
     <link rel="stylesheet" href="CSS/cart.css">
-    
     <script src="JS/js.js" defer></script>
+    <script src="JS/ad.js" defer></script>
 </head>
 <body >
     <div class="Whole-Container">
-        <header id="header">
-            <img src="RESOURCES/LogosEnShiz/Lend-A-Book-logos_black.png" alt="Header" id="header-img" >
-
-            <a href="#" class="toggle-burger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
-
-            <nav id="nav-bar" class="nav-bar">
-                <ul>
-                    <li><a href="index.php" class="headin">Home</a></li>
-                    <li><a href="browse.php" class="headin">Browse</a></li>
-                    <li><a href="plans.php" class="headin">Our Plans</a></li>
-                    <li><a href="contact.php" class="headin">Contact</a></li>
-                    <li><a href="login.php" class="headin">Login</a></li>
-                    <li><a href="myBookList.php" class="headin">Your Library</a></li>
-                </ul>
-            </nav>
-        </header>
-
-    <div class="extra-nav">
-        <div class="searchwrapper-container">
-            <div class="searchwrapper">
-                <div class="searchbox">
-                    <form action="search.php" method="POST" autocomplete="off">
-                    <input type="text" class="search-txt input big" name="search" placeholder="search . . .">
-                    <button type="submit" class="close-btn" name="submit-search">Search</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php require 'header.php'; ?>
 
     <!--Mema muna-->
     <div class="contain-er">
@@ -79,27 +39,50 @@ session_start();
                             </tr>
                         </thead>
                         <tbody class="text-center">
+
                             <?php 
-                                if(isset($_SESSION['cart']))
-                                    {
-                                    foreach($_SESSION['cart'] as $key => $value){
-                                        $sr=$key+1;
+                                if(isset($_SESSION['user_active'])){ $user_id = $_SESSION['user_active']; 
+                                
+                                    $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = $user_id") or die('query failed');
+                                
+
+                                $grand_total = 0;
+                                $sr = 0;
+
+                                
+                                if(mysqli_num_rows($cart_query) > 0){
+                                    while($fetch_cart = mysqli_fetch_assoc($cart_query)){
+                                        $sr = $sr+1;
+                                        $productname =  "$fetch_cart[book_id]";
+                                        $cart_id = "$fetch_cart[cart_id]";
+                                        
+                                        $product_query = mysqli_query($conn, "SELECT * FROM `products` WHERE product_id = $productname") or die('query failed');
+                                        $prod_row = mysqli_fetch_assoc($product_query);
+
+                                        $user_query = mysqli_query($conn, "SELECT * FROM `users` WHERE user_id = $user_id") or die('query failed');
+                                        $user_row = mysqli_fetch_assoc($product_query);
+
+                                        $data = array();
+                                        $data[] = `$prod_row[product_name]`;
 
                                         echo "
                                             <tr>
                                                 <td>$sr</td>
-                                                <td>$value[product_name]</td>
-                                                <td>$value[product_price]<input type='hidden' class='iprice' value='$value[product_price]'></td>
+                                                <td>$prod_row[product_name]</td>
+                                                <td>$prod_row[product_price]<input type='hidden' class='iprice' value='$prod_row[product_price]'></td>
                                                 <td>
                                                     <form action='manage_cart.php' method='POST'>
-                                                        <input class='text-center iquantity' name='Mod_Quantity' onchange='this.form.submit();' type='number' value= '$value[Quantity]' min='1' max='100'>
-                                                        <input type='hidden' name='product_name' value='$value[product_name]'>
+                                                        <input type='hidden' name='cart_id' value='$fetch_cart[cart_id]'>
+                                                        <input class='text-center iquantity' name='cart_quantity' type='number' value= '$fetch_cart[qty]' min='1' max='100'>
+                                                        <input type='submit' name='update_cart' value='update' class='update-it'>
+                                                        <input type='hidden' name='product_name' value='$prod_row[product_name]'>
                                                     </form>
                                                 </td>
                                                 <td class='itotal'></td>
                                                 <form action='manage_cart.php' method='POST'>
+                                                <input type='hidden' name='cart_id' value='$fetch_cart[cart_id]'>
                                                 <td>
-                                                <input type='hidden' name='product_name' value='$value[product_name]'>
+                                                <input type='hidden' name='product_name' value='$prod_row[product_name]'>
                                                 </td>
                                                 <td>
                                                 <button name='Remove_Item' class='text-center remove-thy-button' > REMOVE </button>
@@ -109,6 +92,9 @@ session_start();
                                         ";
                                     }
                                 }
+                                }
+                                else {
+                                }
                             ?>
                         </tbody>
                         
@@ -117,35 +103,10 @@ session_start();
                 <div class="tot">
                     <h3 class="h3" id="gtotal"></h3>
                     <?php 
-                        if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0){
+                        if(isset($_SESSION['user_active']) && mysqli_num_rows($cart_query) > 0){
+
                     ?>
                     <form action="purchase.php" method="POST">
-                        <!-- Bullshit Alert -->
-                        <!-- <div class="form-group">
-                            <input type="hidden" class="form-control" value="<php echo $rowID["id"]; ?>">
-                        </div>
-                        <div class="form-group">
-                            <input type="hidden" class="form-control" value="<php echo $rowID["name"]; ?>">
-                        </div>
-                        <div class="form-group">
-                            <label>Products</label>
-                            <input type="text" class="form-control" value="<php 
-                            foreach($_SESSION['cart'] as $key => $value){
-                            echo $value['product_name'];} ?>">
-                        </div>
-                        <div class="form-group">
-                            <label>Price</label>
-                            <input type="text" class="form-control" value="<php 
-                            foreach($_SESSION['cart'] as $key => $value){
-                            echo $value['Quantity'] * $value['product_price'];} ?>">
-                        </div> -->
-                        <!-- -->
-                        <div class="form-group">
-                            <input type="hidden" name="user_id" class="form-control" value="<?php echo $rowID["id"]; ?>">
-                        </div>
-                        <div class="form-group">
-                            <input type="hidden" name="full_name"  class="form-control" value="<?php echo $rowID["name"]; ?>">
-                        </div>
                         <div class="form-group">
                             <label>Phone Number</label><br>
                             <input type="text" name="phone_no" class="form-control imp" required>
@@ -162,7 +123,11 @@ session_start();
                         </div>
                         <button class="make-purchase" name="purchase">Purchase</button>
                     </form>
-                    <?php } ?>
+                    <?php     
+                }
+                else if(!isset($_SESSION['user_active'])){
+
+                }   ?>
                 </div>
             </div>
         </div>

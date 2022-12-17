@@ -1,67 +1,46 @@
 <?php 
-session_start();
+require 'config.php';
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        if(isset($_POST['add_to_cart']))
-        {
+if(isset($_POST['add_to_cart'])){
 
-            if(isset($_SESSION['cart'])){
+    $product_id = $_POST['product_id'];
+    $user_id = $_POST['c_user_id'];
+    $product_quantity = $_POST['qty'];
 
-                $myitems=array_column($_SESSION['cart'], 'product_name');
+   $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE book_id = '$product_id' AND user_id = '$user_id'") or die('query failed');
+   if(mysqli_num_rows($select_cart) > 0){
+    echo("<script> alert('product already in the cart!')  </script>");
+    echo "<script>window.location.href = 'details.php?id=$product_id';</script>";
+    } else {
 
-                    if(in_array($_POST['product_name'], $myitems)){
-                        echo "<script>
-                            alert('Item already added');
-                            window.location.href = 'http://localhost/BookBorrowTheUltimate/details.php?id=".$_POST['product_id']."';
-                            </script>";
-                    }
-                    else{
-                        $count=count($_SESSION['cart']);
-                        $_SESSION['cart'][$count]=array('product_name'=>$_POST['product_name'], 'product_price'=>$_POST['product_price'],'Quantity'=>1);
-                            echo "<script>
-                            alert('Item  added');
-                            window.location.href = 'http://localhost/BookBorrowTheUltimate/details.php?id=".$_POST['product_id']."';
-                            </script>";
-                    }
-            }
-            else 
-            {
-                $_SESSION['cart'][0]=array('product_name'=>$_POST['product_name'], 'product_price'=>$_POST['product_price'],'Quantity'=>1);
-                echo "<script>
-                alert('Item added');
-                window.location.href = 'http://localhost/BookBorrowTheUltimate/details.php?id=".$_POST['product_id']."';
-                </script>";
-            }
-        }
-        if(isset($_POST['Remove_Item']))
-        {
-            foreach($_SESSION['cart'] as $key => $value){
-                if($value['product_name']==$_POST['product_name'])
-                {
-                    unset($_SESSION['cart'][$key]);
-                    $_SESSION['cart']=array_values($_SESSION['cart']);
-                    echo"<script>
-                        alert('Item Removed');
-                        window.location.href = 'cart.php';
-                    </script>"; 
-                }
-            }
-        }
-        if(isset($_POST['Mod_Quantity']))
-        {
-            foreach($_SESSION['cart'] as $key => $value){
-                if($value['product_name']==$_POST['product_name'])
-                {
-                    $_SESSION['cart'][$key]['Quantity']=$_POST['Mod_Quantity'];
-                    
-                    echo"<script>
-                        window.location.href = 'cart.php';
-                    </script>"; 
-                }
-            }
-        }
+    $stmt = $conn->prepare('INSERT INTO cart (`book_id`, `user_id`, `qty`)
+    values(?, ? ,?)');
+    $stmt->bind_param("iii", $product_id, $user_id ,$product_quantity);
+
+    $stmt->execute();
+    echo("<script> alert('added successfully!')  </script>");
+    echo "<script>window.location.href = 'details.php?id=$product_id';</script>";
+    $stmt->close();
     }
 
+ };
+
+ if(isset($_POST['Remove_Item'])){
+    $remove_id = $_POST['cart_id'];
+    mysqli_query($conn, "DELETE FROM `cart` WHERE cart_id = '$remove_id'") or die('query failed');
+    echo("<script> alert('deleted successfull!')  </script>");
+    echo "<script>window.location.href = 'cart.php';</script>";
+ }
+
+ if(isset($_POST['update_cart'])){
+    $update_quantity = $_POST['cart_quantity'];
+    $update_id = $_POST['cart_id'];
+    mysqli_query($conn, "UPDATE `cart` SET qty = '$update_quantity' WHERE cart_id = '$update_id'") or die('query failed');
+    echo("<script> alert('update successfull!')  </script>");
+    echo "<script>window.location.href = 'cart.php';</script>";
+ }
 
 
-?>
+
+ 
+ ?>

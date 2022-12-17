@@ -1,5 +1,32 @@
-<?php 
+<?php include 'config.php';
+
+
+if(isset($_GET['page_no']) && $_GET['page_no'] != ""){
+    $page_no = $_GET['page_no'];
+} else {
+    $page_no = 1;
+}
+ 
+//products display per page
+
+$total_prod_per_page = 12;
+$offset = ($page_no - 1) * $total_prod_per_page;
+
+//prev and next page
+$prev_page = $page_no - 1;
+$next_page = $page_no + 1;
+
+$result_count = mysqli_query($conn, "SELECT COUNT(*) as total_records FROM products");
+$records = mysqli_fetch_array($result_count);
+
+$total_records = $records['total_records'];
+
+$total_no_pages = ceil($total_records / $total_prod_per_page);
+
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,107 +38,17 @@
     <link rel="stylesheet" href="CSS/global.css">
     <link rel="stylesheet" href="CSS/browse.css">
     <script src="JS/js.js" defer></script>
+    <script src="JS/ad.js" defer></script>
     <link rel="shortcut icon" type="image/x-icon" href="RESOURCES/SVGs/book-icon.svg" />
 </head>
 <body>
     <div class="Whole-Container">
-        <header id="header">
-            <img src="RESOURCES/LogosEnShiz/Lend-A-Book-logos_black.png" alt="Header" id="header-img" >
-    
-            <a href="#" class="toggle-burger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
-    
-            <nav id="nav-bar" class="nav-bar">
-                <ul>
-                    <form>
-                        <li><a href="index.php" class="headin">Home</a></li>
-                        <li><a href="browse.php" class="headin" type="browse">Browse</a></li>
-                        <li><a href="plans.php" class="headin">Our Plans</a></li>
-                        <li><a href="contact.php" class="headin">Contact</a></li>
-                        <li><a href="login.php" class="headin">Login</a></li>
-                        <li><a href="myBookList.php" class="headin">Your Library</a></li>
-                    </form>
-                </ul>
-            </nav>
-        </header>
-    
-        <div class="extra-nav">
-            <div class="searchwrapper-container">
-                <div class="searchwrapper">
-                    <div class="searchbox">
-                    <form action="search.php" method="POST" autocomplete="off">
-                    <input type="text" class="search-txt input big" name="search" placeholder="search . . .">
-                    <button type="submit" class="close-btn" name="submit-search">Search</button>
-                    </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="cart">
-            
-            <h2 class="user-cart">Your Cart</h2>
-            <div class="add-to-cart-btn">
-                <a href="cart.php"> View Cart</a>
-            </div>
-        </div>
+        <?php include 'header.php';?>
 
-    <div class="gridlayout">
-        <div class="sidebar">
-            <div class="side-links">
-                <h2>CATEGORIES</h2>
-                <a href="#" class="top-link">
-                    Comics
-                </a>
-                <a href="#">
-                    Educational
-                </a>
-                <a href="#">
-                    Fantasy
-                </a>
-                <a href="#">
-                    Horror
-                </a>
-                <a href="#">
-                    Literary Classics
-                </a>
-                <a href="#">
-                    Philosophy
-                </a>
-                <a href="#">
-                    Magazines
-                </a>
-                <a href="#">
-                    Comics
-                </a>
-                <a href="#">
-                    Books
-                </a>
-                <a href="#">
-                    Poem
-                </a>
-                <a href="#">
-                    Magazines
-                </a>
-                <a href="#" class="bottom-apple-jeans">
-                    Comics
-                </a>
-                <a href="#">
-                    Magazines
-                </a>
-                <a href="#" class="bottom-apple-jeans">
-                    Comics
-                </a>
-            </div>
-        </div> 
-
+    <div class="php-product-list">
         <button id="back-top">⬏</button>
         <?PHP 
-            require 'config.php';
-            $sql = "SELECT * FROM products";
+            $sql = "SELECT * FROM products LIMIT $offset , $total_prod_per_page";
             $result = mysqli_query($conn, $sql);
             $queryResult = mysqli_num_rows($result);
         ?>
@@ -123,8 +60,8 @@
                 while($row = mysqli_fetch_assoc($result)){
                     echo "<div class ='book-enclosure'>
                         <div class = 'book-case'>
-                            <a href='details.php?id={$row['idProduct']}'>
-                                <img src='".$row['image_book']."'>
+                            <a class='a' href='details.php?id={$row['product_id']}'>
+                                <img src='".$row['image_source']."'>
                             </a>
                         </div>
                     </div>";
@@ -135,9 +72,13 @@
         </div>
         <div class="numero">
             <div class="num">
-                <a href="browse.php" id="local">1</a>
-                <a href="browse1.php">2</a>
-                <a href="browse2.php">3</a>
+                <a  class="page-link <?= ($page_no <= 1) ? 'disabled' : ''; ?> " <?= ($page_no > 1)? 'href=?page_no=' .$prev_page : "" ?>>Prev</a>
+
+                <?php for($counter = 1; $counter <= $total_no_pages; $counter++){ ?>
+                <a href="?page_no=<?= $counter; ?>"><?= $counter; ?></a>
+                <?php } ?>
+                
+                <a class="page_link <?= ($page_no >= $total_no_pages) ? 'disabled' : ''; ?>" <?= ($page_no < $total_no_pages)? 'href=?page_no=' .$next_page : "" ?>>Next</a>
             </div>
         </div>
     </div>
