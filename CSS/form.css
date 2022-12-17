@@ -1,0 +1,30 @@
+
+.create-form {
+	margin: 30px auto;
+	width: fit-content;
+	padding: 25px;
+	background-color: #b31630;
+	color: aliceblue;
+    font-family: 'Poppins', sans-serif;
+	border-radius: 10px;
+}
+
+input[type=text].imp, input[type=number].imp, textarea.imp, button[type=submit].imp, a.imp   {
+        border: none;
+        color: black;
+        padding: 15px 30px;
+		width: 600px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+}
+
+a.imp {
+	text-align: center;
+	background-color: aliceblue;
+}
+
+.acont{
+	margin: 10px auto;
+	width: max-content;
+}

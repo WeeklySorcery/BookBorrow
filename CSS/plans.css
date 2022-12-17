@@ -1,0 +1,163 @@
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #b31630;
+}
+
+body.bookie {
+    background-image: url(https://i.pinimg.com/564x/27/37/90/273790559ee0b521708e18269086ba48.jpg);
+    background-repeat:repeat-x repeat-y;
+    background-size: auto auto;
+    background-position: center;
+}
+
+.subs-wrapper {
+    margin: 10px auto;
+    padding: 20px;
+    background-image: url(https://wallpapercave.com/dwp1x/wp2036912.png);
+    min-height: 600px;
+}
+
+h2 {
+    color: aliceblue;
+    font-size: 3rem;
+    border-bottom: 2.5px solid goldenrod;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media all and (max-width: 480px){
+    h2 {
+        font-size: 2rem;
+    }
+    .subs-box {
+        padding: 10px;
+        margin: 5px 5px;
+    }
+}
+
+
+.subs-container {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+}
+
+.subs-box {
+    height: max-content;
+    background-color: rgb(18, 19, 17);
+    text-align: center;
+    font-size: 18px;
+    color: rgb(238, 231, 231);
+    border-radius: 20px;
+    padding: 40px;
+    border: 3px solid #ffffff;
+    margin: 5px 15px;
+}
+
+.subs-box.contact-page {
+    height: 90%;
+}
+
+@media all and (max-width: 700px){
+    .subs-box.contact-page {
+        height: max-content;
+        padding: 10px;
+        margin: auto;
+    }
+
+}
+
+.btnPlans {
+    background-color: #b31630;
+    color: blanchedalmond;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*Contact Page*/
+.login-page {
+    width: auto;
+    padding: 2% 0 0;
+    margin: auto;
+    min-height: 570px;
+  }
+
+.login-page.contact-login-page {
+  min-height: 400px;
+}
+
+
+  .form {
+    position: relative;
+    background: #FFFFFF;
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+
+  .form.login-form-off {
+    max-width: 80%;
+    background: #1b1b1b;
+  }
+
+  @media all and (max-width: 450px){
+
+  .form.login-form-off {
+    max-width: 95%;
+    background: #1b1b1b;
+  }
+}
+
+  .form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 25px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  .form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+
+.form button:hover,.form button:active,.form button:focus {
+    background: #43A047;
+  }
+
+  .form .messager {
+    margin: 15px 0 0;
+    font-size: 16px;
+    color: #000;
+  }
+
+  .form .message a {
+    color: #4CAF50;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+
+

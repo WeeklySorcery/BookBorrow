@@ -1,0 +1,143 @@
+.contain-thecontainedProf {
+    display: flex;
+    min-height: 580px;
+}
+
+.contain-profile {
+    display: flex;
+    background-color:#425960;
+    background-image: url(https://wallpapercave.com/dwp1x/wp2706119.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border:5px solid #b31630;
+    margin: 25px 25px;
+    width: 30%;
+    height: auto;
+    padding: 10px 5px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#pic-obunga {
+    width: 250px;
+    height: auto;
+    border:5px solid blanchedalmond;
+    padding: 0%;
+    margin-left: 10px;
+    border-radius: 20px;
+}
+
+#prof-btn {
+    width: 120px;
+    height: min-content;
+    padding: 15px;
+    font-size: 20px;
+    font-family: 'Architects Daughter','Courier New', Courier, monospace;
+}
+
+.ubos-nako-ng-name {
+    margin-right: 20px;
+}
+
+#user-name {
+    background-color: #b31630;
+    color: blanchedalmond;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px 5px 0 5px;
+    font-family: 'Architects Daughter','Courier New', Courier, monospace;
+}
+
+.recommended {
+    display: flex;
+    background-color:#425960;
+    background-image: url(https://wallpapercave.com/dwp1x/wp2706119.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border:5px solid #b31630;
+    margin: 25px 25px;
+    width: 65vw;
+    padding: 10px 5px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#recent-bought {
+    width: 10rem;
+    height: auto;
+    border:5px solid #1e1714;
+    padding: 0%;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.double-treble {
+    margin: 0px 30px ;
+}
+
+
+
+@media all and (max-width: 1390px){
+    .contain-thecontainedProf {
+        display: block;
+    }
+    
+    .contain-profile {
+        display: block;
+        margin: 20px auto;
+        width: 60%;
+        height: auto;
+    }
+
+    .recommended {
+        display: block;
+        margin: 25px auto;
+        width: 65vw;
+    }
+
+    #recent-bought {
+        width: 14rem;
+        height: auto;
+        margin: auto;
+    }
+
+    #user-name {
+        margin: 25px auto;
+        width: 80%;
+        padding: 10px;
+    }
+
+    .double-treble {
+        display: inline-block;
+    }
+}
+
+@media all and (max-width: 500px) {
+    /*Booklist*/
+    .contain-profile {
+        width: 90%;
+    }
+
+    .recommended {
+        width: 90vw;
+    }
+}
+
+@media all and (max-width: 324px) {
+    #prof-btn {
+        width: 200px;
+    }
+
+    #pic-obunga {
+        width: 200px;
+    }
+
+    .ubos-nako-ng-name {
+        margin: auto;
+    }
+
+    #recent-bought {
+        width: 10rem;
+    }
+}

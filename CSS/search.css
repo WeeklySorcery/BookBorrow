@@ -1,0 +1,48 @@
+
+
+.search-container {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(49,166,128,1) 49%, rgba(0,212,255,1) 100%);
+    
+    padding: 10px;
+    margin: auto;
+    font-size: 24px;
+    font-family: 'Poppins','Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+.book-search-info {
+    background-color: #b31630;
+    text-align: center;
+    max-width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.searchLink {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.book-search-info:hover {
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 10%, rgba(56,28,38,1) 50%, rgba(0,0,0,1) 97%);
+    transform: scale(1.02);
+}
+
+@media all and (max-width: 400px){
+    .book-search-info {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .search-image-size {
+        width: 200px;
+        height: auto;
+    }
+
+}

@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box; }
+
+body {
+    background-color: #242526;
+}
+
+
+
+/*Header*/
+
+header {
+    background-color: #183951;
+    text-align: center;
+    display: flex; 
+    height: fit-content;
+}
+
+#header-img {
+    width: 7.5em;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 60%;
+    cursor: pointer;
+    margin-left: 3em;
+    z-index: 1; 
+}
+
+header ul li a{
+    color: aliceblue;
+    font-size: 18px;
+    font-family:'Architects Daughter', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    display: block;
+    cursor: url('../RESOURCES/SVGs/cursorBlue.svg'), auto; 
+}
+
+
+
+header ul li{
+    display: inline-block;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    font-size: 24px; 
+}
+
+.toggle-burger {
+    position: absolute;
+    display: none;
+    top: 2.75rem;
+    right: 3rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px;
+    height: 41px;
+}
+
+.toggle-burger .bar {
+    height: 6px;
+    width: 100%;
+    background-color: antiquewhite;
+    border-radius: 10px ;
+}
+
+#nav-bar {
+    margin-left: 40%;
+    margin-top: 25px;
+}
+
+.headin:hover {
+    transition: 0.3s ease;
+    color: #f9d725 ; 
+}
+
+.searchwrapper-container {
+    position: absolute;
+    top: 1.5%;
+    left: 15%;
+}
+
+.searchwrapper {
+    position: absolute;
+    padding: 10px 10px;
+}
+
+.searchbox {
+    position: absolute;
+    border-radius: 40px;
+    background-color: #242526;
+    padding: 10px 10px;
+    width: 500px;
+    margin-left: 10px;
+}
+
+.input{
+    width: 400px;
+    border: 3px solid #fff;
+    background: transparent;
+    padding: 10px 10px;
+    border-radius: 50px;
+    outline: none;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .input::-webkit-input-placeholder {
+    color: #fff;
+    opacity: 0.5;
+    font-family: 'Architects Daughter', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+  }
+
+  .close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color:#b31630;
+    background: #fff;
+    border: 0px;
+    width: 120px;
+    height: 47px;
+    border-radius: 50px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: bold;
+   
+  }
+
+/*Cart Nav*/
+
+.cart {
+    background-color: #f9d725;
+    color: #242526;
+    padding: 10px;
+    text-align: right;
+    display: flex;
+    position: relative;
+}
+
+.add-to-cart-btn a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 24px;
+    background-color: #b31630;
+    border-radius: 25px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.add-to-cart-btn h2{
+    display: inline-block;
+    position: relative;
+    bottom: 5px;
+    margin-right: 10px;
+}
+
+.rightsider , .leftsider{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+h2.user-cart {
+    color: unset;
+    font-size: 24px;
+    border-bottom: unset;
+    margin-bottom: unset;
+}
+
+button.category {
+    position: relative;
+    top: 0px;
+    display: flex;
+    margin-left: 20px;
+    border: none;
+    background-color: #b31630;
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 10px;
+    color: aliceblue;
+    font-family: 'Poppins', 'Architects Daughter', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: url('../RESOURCES/SVGs/pencil.svg'), auto; 
+    
+}
+
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    left: 20px;
+    border-radius: 10px;
+    top: calc(100% + .25rem);
+    background-color: goldenrod;
+    color: aliceblue;
+    box-shadow: 0 2px 5px 0 #242526(0, 0, 0, .1);
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    transform: translateY(-10px);
+}
+
+
+.dropdown-menu ul li {
+    text-decoration: none;
+    list-style: none;
+    margin: 10px;
+}
+
+.dropdown-menu ul li a {
+    color: #550a17;
+    text-decoration: none;
+    font-size: 24px;
+    border-bottom: 2px solid #183951;
+}
+
+.dropdown.active > .category + .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 100;
+}
+
+/*Footer*/
+
+footer {
+    margin: auto;
+    background-color: #b31630;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    height: auto;
+    width: 100vw;
+    padding: 20px;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.footer-class {
+    color: blanchedalmond;
+    text-align: center;
+    padding-top: 15px;
+}
+
+
+
+
+/*Media Query*/
+
+
+@media all and (max-width: 1480px){
+
+    .searchwrapper-container {
+        position: absolute;;
+        top: -5%;
+        left: 2%;
+    }
+
+    .searchbox {
+        width: 90vw;
+        margin-left: 10px;
+    }
+    
+    .extra-nav {
+        position: relative;
+        background-color: #b31630;
+        padding: 2.5em;
+    }
+
+    .input{
+        width: 86vw;
+      }
+
+    #nav-bar {
+        margin-left: 15%;
+        margin-top: 25px; }
+}
+
+@media all and (max-width: 1046px){
+    
+    
+    .toggle-burger {
+        display: flex;
+    }
+
+    #nav-bar {
+        display: none;
+        margin-left: none;
+        margin: 0;
+        width: 100%;
+    }
+
+    #header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #nav-bar ul li a{
+        text-align: center;
+        padding: .5rem 1rem;
+        margin: 0 0 10 0;
+    }
+
+    #nav-bar ul li{
+        width: 100%;
+        margin: 5px 0 5px 0 ;
+        flex-direction: column;
+    }
+
+    #nav-bar.active {
+        display: flex;
+    }
+
+    .headin:hover {
+        width: 100vw;
+        margin: 0;
+        background-color: #b31630;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .headin {
+        width: 100vw;
+    }
+
+    #header-img {
+    margin-left: 1em;
+    }
+
+
+}
+
+@media all and (max-width: 390px) {
+    /*Index*/
+    .input {
+        width: 80vw;
+    }
+}
+
+a.unset-a {
+    background-color: unset;
+    padding: unset;
+}
+
+
+body {
+    cursor: url('../RESOURCES/SVGs/cursorBlue.svg'), auto; 
+}
+
+a {
+    cursor:url('../RESOURCES/SVGs/pencil.svg'), auto ; 
+}
+
+svg {
+    width: 50px;
+    height: 50px;
+  }
+
