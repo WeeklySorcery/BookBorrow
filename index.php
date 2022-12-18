@@ -28,7 +28,7 @@ session_start();
     <div class="row">
         <button class="handle left-handle">&#8249;</button>
         <div class="list-a-book">
-            <a href="z_Sample4.php">
+            <a href="#.php">
                 <img src="RESOURCES/Books//list-of-books/howlMovingCastle.jpg" alt="" class="row-book row-large">
             </a>
             <a href="#">

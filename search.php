@@ -19,6 +19,8 @@
         <?php include 'header.php'; ?>
 
     <div class="search-container">
+        <button id="back-top">⬏</button>
+
         <?PHP 
             if (isset($_POST['submit-search'])){
                 $search = mysqli_real_escape_string($conn, $_POST['search']);

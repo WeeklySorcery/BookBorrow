@@ -23,8 +23,8 @@
             <div class="subs-container">
                 <div class="subs-box">
                         <p>
-                            $10 <br>
-                            2 rented books a month
+                            $5 <br>
+                            1 rented books a month
                         </p>
                         <input type="button" value="Select" class="btnPlans">
                         <h3><br>Benefits</h3>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="subs-box">
                         <p>
-                            $10 <br>
+                            $15 <br>
                             2 rented books a month
                         </p>
                         <input type="button" value="Select" class="btnPlans">
@@ -45,8 +45,8 @@
                 </div>
                 <div class="subs-box">
                     <p>
-                        $10 <br>
-                        2 rented books a month
+                        $25 <br>
+                        3 rented books a month
                     </p>
                     <input type="button" value="Select" class="btnPlans">
                     <h3><br>Benefits</h3>
