@@ -11,6 +11,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
     $name = $row["product_name"];
     $desc = $row["product_desc"];
+    $desc = mysqli_escape_string($conn, $desc);
     $price = $row["product_price"];
     $sarsa = $row["image_source"];
     $categ = $row["category_id"];
@@ -23,6 +24,9 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     $price = $_POST["price"];
     $sarsa = $_POST["sarsa"];
     $categ = $_POST["categ"];
+
+    $desc = mysqli_escape_string($conn, $_POST['desc']);
+
 
     $sql = "UPDATE products SET product_name = '$_POST[name]', product_desc = '$_POST[desc]', product_price = '$_POST[price]', image_source = '$_POST[sarsa]', category_id = $_POST[categ] WHERE product_id = '$id'";
     

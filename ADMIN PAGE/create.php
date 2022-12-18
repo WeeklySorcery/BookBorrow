@@ -8,6 +8,8 @@ $price = "";
 $sarsa = "";
 $categ = "";
 
+
+
 if (isset($_POST["submit"])){
     $name = $_POST["name"];
     $desc = $_POST["desc"];
@@ -15,6 +17,8 @@ if (isset($_POST["submit"])){
     $sarsa = $_POST["sarsa"];
     $categ = $_POST["categ"];
     $duplicate = mysqli_query($conn, "SELECT * FROM products WHERE product_name = '$name'");
+    
+    $desc = mysqli_escape_string($conn, $_POST['desc']);
 
     if(mysqli_num_rows($duplicate) > 0){
         echo

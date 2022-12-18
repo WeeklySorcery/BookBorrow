@@ -37,6 +37,8 @@
 <body>
     <div class="Whole-Container search-espesyal">
     <?php  include 'header-admin.php'; ?>
+    
+
 
     <div class="pro">
             <h2>Products</h2>
@@ -98,6 +100,7 @@
             </tbody>
         </table>
     </div>
+
     </div>
 </body>
 </html>
