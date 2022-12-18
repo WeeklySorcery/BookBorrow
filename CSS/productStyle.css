@@ -24,6 +24,9 @@ body.bookie {
 .product-size {
     padding: 10px;
     background-color: goldenrod;
+    max-width: 300px;
+    max-height: 600px;
+
 }
 
 .product-desc {
